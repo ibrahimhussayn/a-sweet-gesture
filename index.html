@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Sumayya ❤️</title>
+
+<style>
+html { scroll-behavior:smooth; }
+
+body{
+margin:0;
+font-family:'Georgia', serif;
+font-style:italic;
+overflow-x:hidden;
+}
+
+.section{
+height:100vh;
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.section img{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+filter:brightness(60%);
+z-index:-1;
+}
+
+.text{
+font-size:28px;
+max-width:80%;
+line-height:1.6;
+text-shadow:0 0 15px rgba(0,0,0,0.7);
+animation:fadeUp 1.5s ease;
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+.buttons{
+display:flex;
+gap:20px;
+margin-top:30px;
+justify-content:center;
+}
+
+button{
+padding:15px 35px;
+font-size:18px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+font-style:italic;
+transition:0.3s;
+}
+
+#yesBtn{
+background:#ff4b5c;
+color:white;
+box-shadow:0 0 20px #ff4b5c;
+}
+
+#noBtn{
+background:white;
+color:#ff4b5c;
+position:relative;
+}
+
+/* Final Screen */
+#finalScreen{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+color:white;
+z-index:1000;
+}
+
+#finalScreen h1{
+font-size:32px;
+}
+
+.rose{
+position:absolute;
+font-size:28px;
+animation:floatUp 5s linear infinite;
+opacity:0.9;
+}
+
+@keyframes floatUp{
+0%{transform:translateY(100vh);opacity:0;}
+10%{opacity:1;}
+100%{transform:translateY(-10vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="section">
+<img src="photo1.JPG">
+<div class="text">
+Sumayya… how do you manage to look this cute without even trying?
+</div>
+</div>
+
+<div class="section">
+<img src="photo2.JPG">
+<div class="text">
+I’m starting to think the sun takes lighting lessons from you.
+</div>
+</div>
+
+<div class="section">
+<img src="photo3.JPG">
+<div class="text">
+Honestly… I don’t stand a chance against that smile, but mai tumsey zyadaa sundar hu.
+</div>
+</div>
+
+<div class="section">
+<img src="photo4.JPG">
+<div class="text">
+So I have one very serious question for you…<br><br>
+
+<div class="buttons">
+<button id="yesBtn">Yes 😌</button>
+<button id="noBtn">No 🙄</button>
+</div>
+</div>
+</div>
+
+<div id="finalScreen">
+<h1>
+Issey pehle joh chance miss kiyaa good is baar woh galti nahi kare😌, Sumayya ❤️<br><br>
+Now let me buy you dinner, sweet potato 🌹
+</h1>
+</div>
+
+<script>
+let yesBtn=document.getElementById("yesBtn");
+let noBtn=document.getElementById("noBtn");
+let finalScreen=document.getElementById("finalScreen");
+
+/* No button moves */
+noBtn.addEventListener("mouseover",function(){
+let x=Math.random()*200-100;
+let y=Math.random()*200-100;
+noBtn.style.transform=`translate(${x}px,${y}px)`;
+});
+
+/* If she clicks No */
+noBtn.addEventListener("click",function(){
+alert("please say yes 🥺👉🏻👈🏻");
+});
+
+/* Yes button */
+yesBtn.addEventListener("click",function(){
+finalScreen.style.display="flex";
+
+/* roses */
+for(let i=0;i<25;i++){
+let rose=document.createElement("div");
+rose.classList.add("rose");
+rose.innerHTML="🌹";
+rose.style.left=Math.random()*100+"vw";
+rose.style.animationDuration=(3+Math.random()*3)+"s";
+document.body.appendChild(rose);
+}
+
+/* popup after slight delay */
+setTimeout(function(){
+alert("thank you 'muh boli' girlfriend 😌❤️");
+},800);
+});
+</script>
+
+</body>
+</html>
